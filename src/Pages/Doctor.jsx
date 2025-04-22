@@ -1,13 +1,14 @@
 import React from 'react';
-import { useLoaderData, useNavigate, useParams } from 'react-router';
+import { useLoaderData, useParams } from 'react-router';
 import { addBookings } from '../Utils';
 import { toast, ToastContainer } from 'react-toastify';
+import { FaRegRegistered } from "react-icons/fa";
 
 const Doctor = () => {
 
     const DoctorsData = useLoaderData();
     const { id } = useParams();
-    const naviage = useNavigate();
+
 
     const singleDoctor = DoctorsData.find(doctor => doctor.id === parseInt(id));
 
@@ -15,7 +16,7 @@ const Doctor = () => {
     const handleAppointment = () => {
         addBookings(singleDoctor);
         toast.success(`${singleDoctor.name} Appointment Booked Successfully`)
-        naviage('/my-books');
+
 
     }
 
@@ -42,13 +43,13 @@ const Doctor = () => {
                         <p>Working at</p>
                         <h2 className='text-xl font-semibold'>{singleDoctor.workingPlace}</h2>
                         <hr className='border-dashed border-gray-400' />
-                        <h4>Reg NO: {singleDoctor.registrationNumber}</h4>
+                        <h4><FaRegRegistered className='inline-block'/> Reg NO: {singleDoctor.registrationNumber}</h4>
                         <hr className='border-dashed border-gray-400' />
                         <div className='flex gap-2 mb-2'>
                             <p className='font-semibold'>Availability</p>
                             <p>{singleDoctor.availabilityDays.map(days => <div className="badge badge-soft badge-warning mr-2 " key={days[0]}>{days}</div>)}</p>
                         </div>
-                        <p className='font-semibold'>Consultation Fee: <span className='font-medium'>Taka : {singleDoctor.consultationFee}  (incl. Vat) Per consultation</span> </p>
+                        <p className='font-semibold'>Consultation Fee: <span className='font-medium'><span className='text-indigo-600'>Taka : {singleDoctor.consultationFee}</span>  (incl. Vat) Per consultation</span> </p>
 
                     </div>
                 </div>

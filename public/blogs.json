@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "What is useState and how does it work in React?",
+    "answer": "useState is a React hook that allows you to add state to functional components. It returns an array with two elements: the current state value and a function to update that value. When the state is updated, React re-renders the component.",
+    "date": "2025-04-15"
+  },
+  {
+    "id": 2,
+    "question": "What is the purpose of useEffect in React?",
+    "answer": "useEffect is a React hook that allows you to perform side effects in functional components. It can be used for tasks like fetching data, updating the DOM, or setting up subscriptions. It runs after the render and can be controlled to run only when certain dependencies change.",
+    "date": "2025-04-16"
+  },
+  {
+    "id": 3,
+    "question": "What is a custom hook in React and when should you use one?",
+    "answer": "A custom hook in React is a JavaScript function that allows you to reuse logic across multiple components. Custom hooks are typically used when you need to extract complex state logic or side effects from a component and make them reusable.",
+    "date": "2025-04-17"
+  },
+  {
+    "id": 4,
+    "question": "Difference between controlled and uncontrolled components? Which one is better?",
+    "answer": "In a controlled component, the component’s state is managed by React (using state hooks or props). In an uncontrolled component, the state is handled by the DOM itself, using references. Controlled components are preferred in React as they give you better control over the form data and UI, while uncontrolled components are easier to set up but less flexible.",
+    "date": "2025-04-18"
+  },
+  {
+    "id": 5,
+    "question": "Tell us something about useFormStatus() (explore and explain)",
+    "answer": "useFormStatus() is a React hook introduced in React 18 for tracking the status of form submissions, specifically for managing the form's submission state, whether it’s submitting, completed, or failed. It is commonly used in forms with async validation or submission processes to enhance the UX by providing users with feedback during form submission.",
+    "date": "2025-04-19"
+  }
+]

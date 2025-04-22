@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { FaRegRegistered } from "react-icons/fa";
 
 const DoctorCard = ({ doctor }) => {
 
@@ -27,7 +28,7 @@ const DoctorCard = ({ doctor }) => {
                     </p>
                     <hr className='border-dashed border-gray-400 mb-2' />
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                        Reg No: {registrationNumber}
+                       <FaRegRegistered className='inline-block'/> Reg No: {registrationNumber}
                     </p>
 
                     <Link to={`/doctor/${doctor.id}`} ><button className="box-border w-full relative z-30 inline-flex items-center justify-center px-8 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-indigo-600 rounded-md cursor-pointer group ring-offset-2 ring-1 ring-indigo-300 ring-offset-indigo-200 hover:ring-offset-indigo-500 ease focus:outline-none">

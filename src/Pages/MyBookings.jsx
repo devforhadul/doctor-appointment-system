@@ -3,9 +3,11 @@ import { getBookings, removeBookings } from '../Utils';
 import BookedCard from '../Components/BookedCard';
 import { toast, ToastContainer } from 'react-toastify';
 import { Bar, BarChart, XAxis, YAxis } from 'recharts';
+import { useNavigate } from 'react-router';
 
 const MyBookings = () => {
     const [displayBooked, setDisplayBooked] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const savedBookings = getBookings();
@@ -41,7 +43,19 @@ const MyBookings = () => {
             )}
 
             {displayBooked.length === 0 ? (
-                <p className="text-center text-2xl font-bold my-5 text-gray-600">No appointments found.</p>
+                <>
+                    <div className='my-8 p-15'>
+                        <p className="text-center text-2xl font-bold my-5 text-gray-600">You Have not Booked any appointment yet</p>
+                        <p className="text-center px-10 text-gray-600 my-3">
+                            Our platform connects you with verified, experienced doctors across various specialties — all at your convenience.
+                        </p>
+                        <div className='text-center'>
+                            <button onClick={()=>navigate('/')}  className='btn rounded-sm bg-blue-700 text-white mt-5'>Book an Appointment</button>
+                        </div>
+                    </div>
+                </>
+
+
             ) : (
                 <>
                     <h2 className="text-2xl font-bold text-center">My Today Appointments</h2>
