@@ -1,10 +1,22 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useParams } from 'react-router';
+import { addBookings } from '../Utils';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Doctor = () => {
 
-    const singleDoctor = useLoaderData();
-    console.log(singleDoctor);
+    const DoctorsData = useLoaderData();
+    const { id } = useParams();
+
+    const singleDoctor = DoctorsData.find(doctor => doctor.id === parseInt(id));
+
+
+    const handleAppointment = () => {
+        addBookings(singleDoctor);
+        toast.success('Your appointment has been booked successfully.')
+    }
+
+
 
     return (
         <div className='w-11/12 mx-auto'>
@@ -18,35 +30,37 @@ const Doctor = () => {
             <div className='bg-white rounded-2xl  p-8 mt-4'>
                 <div className='flex gap-5 items-center  p-5'>
                     <div>
-                        <img src="/src/assets/doctor-sample.png" alt="" />
+                        <img className='w-75 h-75 rounded-2xl' src={singleDoctor.image} alt="" />
                     </div>
-                    <div>
-                        <h2 className='text-2xl font-bold'>Dr Name</h2>
-                        <p>MBBS</p>
+                    <div className='space-y-2'>
+                        <h2 className='text-2xl font-bold'>{singleDoctor.name}</h2>
+                        <p>{singleDoctor.education}</p>
+                        <p>{singleDoctor.speciality}</p>
                         <p>Working at</p>
-                        <h2 className='text-xl font-semibold'>Hospita Name</h2>
-                        <hr />
-                        <h4>Reg NO: </h4>
-                        <hr />
+                        <h2 className='text-xl font-semibold'>{singleDoctor.workingPlace}</h2>
+                        <hr className='border-dashed border-gray-400' />
+                        <h4>Reg NO: {singleDoctor.registrationNumber}</h4>
+                        <hr className='border-dashed border-gray-400' />
                         <div className='flex gap-2 mb-2'>
-                            <p>Availability</p>
-                            <p>sunday</p>
+                            <p className='font-semibold'>Availability</p>
+                            <p>{singleDoctor.availabilityDays.map(days => <div className="badge badge-soft badge-warning mr-2 " key={days[0]}>{days}</div>)}</p>
                         </div>
-                        <p>Consultation Fee: </p>
+                        <p className='font-semibold'>Consultation Fee: <span className='font-medium'>Taka : {singleDoctor.consultationFee}  (incl. Vat) Per consultation</span> </p>
 
                     </div>
                 </div>
             </div>
-            <div className='bg-white rounded-2xl  p-8 my-5'>
-                <h2 className='text-2xl font-semibold'>Book an Appointment</h2>
-                <hr />
-                <div className='flex gap-5 justify-between items-center  p-3'>
-                    <p>Availability</p>
-                    <p>abc</p>
+            <div className='bg-white rounded-2xl space-y-3 p-8 my-6'>
+                <h2 className='text-2xl font-semibold text-center'>Book an Appointment</h2>
+                <hr className='border-dashed border-gray-400' />
+                <div className='flex justify-between items-center'>
+                    <p className='font-semibold'>Availability</p>
+                    <div className="badge badge-soft badge-success ">Doctor Available today</div>
                 </div>
-                <hr />
-                <p>Due to high patient volume, we are currently accepting appointments for today only. We appreciate your understanding and cooperation.</p>
-                <button className='btn w-full rounded-full bg-blue-700 text-white   '>Book Appointment Now</button>
+                <hr className=' border-gray-400' />
+                <div className="badge badge-soft badge-warning ">Due to high patient volume, we are currently accepting appointments for today only. We appreciate your understanding and cooperation.</div>
+                <button onClick={handleAppointment} className='btn w-full rounded-full bg-blue-700 text-white mt-5'>Book Appointment Now</button>
+                <ToastContainer></ToastContainer>
             </div>
 
         </div>

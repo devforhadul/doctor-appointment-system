@@ -25,7 +25,7 @@ const DoctorCard = ({ doctor }) => {
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                         {education}
                     </p>
-                    <hr className='border-dashed mb-2' />
+                    <hr className='border-dashed border-gray-400 mb-2' />
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                         Reg No: {registrationNumber}
                     </p>
