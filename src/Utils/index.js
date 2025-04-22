@@ -15,7 +15,7 @@ export const addBookings = (bookings) => {
     const booked = getBookings();
     const existingBooking = booked.find(booking => booking.id === bookings.id);
     if (existingBooking) {
-        toast.error('You have already booked an appointment with this doctor.');
+        toast.error(`${bookings.name} already booked`);
         return;
     }
     booked.push(bookings);

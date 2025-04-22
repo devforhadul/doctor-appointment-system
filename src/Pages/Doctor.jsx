@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router';
+import { useLoaderData, useNavigate, useParams } from 'react-router';
 import { addBookings } from '../Utils';
 import { toast, ToastContainer } from 'react-toastify';
 
@@ -7,13 +7,16 @@ const Doctor = () => {
 
     const DoctorsData = useLoaderData();
     const { id } = useParams();
+    const naviage = useNavigate();
 
     const singleDoctor = DoctorsData.find(doctor => doctor.id === parseInt(id));
 
 
     const handleAppointment = () => {
         addBookings(singleDoctor);
-        toast.success('Your appointment has been booked successfully.')
+        toast.success(`${singleDoctor.name} Appointment Booked Successfully`)
+        naviage('/my-books');
+
     }
 
 
@@ -23,7 +26,7 @@ const Doctor = () => {
 
             <div className='bg-white rounded-2xl  p-8'>
                 <h2 className='text-2xl font-semibold text-center'>Doctor’s Profile Details</h2>
-                <p className='text-center px-10'>Lorem ipsum dolor sit amet consectetur. Sit enim blandit orci tortor amet ut. Suscipit sed est fermentum magna. Quis vitae tempus facilisis turpis imperdiet mattis donec dignissim volutpat.</p>
+                <p className='text-center px-10 mt-5'>Explore In-Depth Information About the Doctor's Educational Background, Specializations, Years of Experience, Patient Reviews, Consultation Hours, and Contact Information to Help You Make an Informed Choice</p>
 
             </div>
 

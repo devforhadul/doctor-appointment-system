@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="font-jakarta text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Emergency
           </button>
@@ -48,17 +48,18 @@ const Navbar = () => {
         >
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
-              <NavLink to="/" className={({ isActive }) => `${isActive ? 'text-gray-900' : ''} block py-2 px-3 md:p-0 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:dark:text-blue-500`}>Home</NavLink>
+              <NavLink to="/" className={({ isActive }) => `${isActive ? 'text-indigo-600' : ''}`}>Home</NavLink>
 
             </li>
             <li>
-              <NavLink to="/my-books" className={({ isActive }) => `${isActive ? 'bg-indigo-600 text-white' : ''} block py-2 px-3 md:p-0 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:dark:text-blue-500`}>My Bookings</NavLink>
+              <NavLink to="/my-books" className={({ isActive }) => `${isActive ? 'text-indigo-600' : ''} `}>My Bookings</NavLink>
+              
             </li>
             <li>
-              <NavLink to="/blogs" className={({ isActive }) => `${isActive ? 'bg-indigo-600 text-white' : ''} block py-2 px-3 md:p-0 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:dark:text-blue-500`}>Blogs</NavLink>
+              <NavLink to="/blogs" className={({ isActive }) => `${isActive ? 'text-indigo-600' : ''} `}>Blogs</NavLink>
             </li>
             <li>
-              <NavLink to="/contactus" className={({ isActive }) => `${isActive ? 'bg-indigo-600 text-white' : ''} block py-2 px-3 md:p-0 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:dark:text-blue-500`}>Contact us</NavLink>
+              <NavLink to="/contactus" className={({ isActive }) => `${isActive ? 'text-indigo-600' : ''} `}>Contact us</NavLink>
             </li>
           </ul>
         </div>
