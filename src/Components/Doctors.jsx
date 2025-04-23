@@ -31,7 +31,7 @@ const Doctors = ({ doctorData }) => {
 
             </div>
             <div className='text-center'>
-            <button onClick={()=>setViewAllDoctor(prv=> !prv)} type="button" className=" text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{viewAllDoctor ? 'Show Less' : 'View All Doctors'}</button>
+            <button onClick={()=>setViewAllDoctor(prv=> !prv)} type="button" className=" text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer">{viewAllDoctor ? 'Show Less' : 'View All Doctors'}</button>
             </div>
         </div>
     );

@@ -10,22 +10,22 @@ const Success = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4'>
                 <div className='bg-white shadow-md rounded-lg p-5 flex flex-col items-center justify-center space-y-2'>
-                    <img src="/src/assets/success-doctor.png" alt="" />
+                    <img src="/success-doctor.png" alt="" />
                     <p className='font-extrabold text-2xl'> <CountUp end={199} duration={2.75}/>+ </p>
                     <p className='text-gray-600'>Total Doctors</p>
                 </div>
                 <div className='bg-white shadow-md rounded-lg p-5 flex flex-col items-center justify-center space-y-2'>
-                    <img src="/src/assets/success-review.png" alt="" />
+                    <img src="/success-review.png" alt="" />
                     <p className='font-extrabold text-2xl'><CountUp end={446} duration={2.75}/>+</p>
                     <p className='text-gray-600'>Total Reviews</p>
                 </div>
                 <div className='bg-white shadow-md rounded-lg p-5 flex flex-col items-center justify-center space-y-2'>
-                    <img src="/src/assets/success-patients.png" alt="" />
+                    <img src="/success-patients.png" alt="" />
                     <p className='font-extrabold text-2xl'><CountUp end={1900} duration={2.75}/>+</p>
                     <p className='text-gray-600'>Patiens</p>
                 </div>
                 <div className='bg-white shadow-md rounded-lg p-5 flex flex-col items-center justify-center space-y-2'>
-                    <img src="/src/assets/success-staffs.png" alt="" />
+                    <img src="/success-staffs.png" alt="" />
                     <p className='font-extrabold text-2xl'><CountUp end={300} duration={2.75}/>+</p>
                     <p className='text-gray-600'>Total Stuffs</p>
                 </div>

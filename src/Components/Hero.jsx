@@ -67,9 +67,9 @@ const Hero = () => {
 
                 </div>
                 <div className="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
-                    <img src="/src/assets/banner-img-1.png" alt="" />
+                    <img src="/banner-img-1.png" alt="" />
 
-                    <img src="/src/assets/banner-img-1.png" alt="" />
+                    <img src="/banner-img-1.png" alt="" />
                 </div>
             </div>
 

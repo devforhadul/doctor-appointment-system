@@ -14,9 +14,9 @@ const DoctorCard = ({ doctor }) => {
                 </a>
                 <div className="p-5">
                     <div className='flex gap-2 mb-2'>
-                        <span className={`bg-blue-100 ${available ? 'text-green-700' : 'text-red-500'} text-xs font-medium me-2 px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-300`}>{available ? 'Available' : 'Not Available'}</span>
+                        <span className={`bg-blue-100 ${available ? 'text-green-700 border border-dashed border-green-700' : 'text-red-600 border border-dashed border-red-600'} text-xs font-medium me-2 px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-300`}>{available ? 'Available' : 'Not Available'}</span>
 
-                        <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-300">{experience} Experience</span>
+                        <span className="bg-blue-100 text-blue-800 border border-dashed border-blue-800 text-xs font-medium me-2 px-3 py-1 rounded-full dark:bg-blue-900 dark:text-blue-300">{experience} Experience</span>
                     </div>
                     <a href="#">
                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

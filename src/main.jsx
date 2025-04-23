@@ -47,7 +47,7 @@ const router = createBrowserRouter([
               <p className="text-center px-10 text-gray-600 my-3">
                 No Doctor Found with this ID. Please check the ID and try again.
               </p>
-              <h5 className='text-center'>Reg no</h5>
+  
               <div className='text-center'>
                 <Link to='/'><button className='btn rounded-sm bg-blue-700 text-white mt-5'>View all Doctor</button></Link>
               </div>
