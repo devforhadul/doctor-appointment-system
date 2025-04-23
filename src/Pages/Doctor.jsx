@@ -1,13 +1,17 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router';
+import { Link, useLoaderData, useNavigate, useParams } from 'react-router';
 import { addBookings } from '../Utils';
 import { toast, ToastContainer } from 'react-toastify';
 import { FaRegRegistered } from "react-icons/fa";
+
 
 const Doctor = () => {
 
     const DoctorsData = useLoaderData();
     const { id } = useParams();
+    const navigate = useNavigate();
+  
+
 
 
     const singleDoctor = DoctorsData.find(doctor => doctor.id === parseInt(id));
@@ -15,7 +19,11 @@ const Doctor = () => {
 
     const handleAppointment = () => {
         addBookings(singleDoctor);
+
         toast.success(`${singleDoctor.name} Appointment Booked Successfully`)
+        setTimeout(() => {
+            navigate('/my-books');
+          }, 500); // 1.5 seconds delay
 
 
     }
@@ -26,8 +34,8 @@ const Doctor = () => {
         <div className='w-11/12 mx-auto'>
 
             <div className='bg-white rounded-2xl  p-8'>
-                <h2 className='text-2xl font-semibold text-center'>Doctor’s Profile Details</h2>
-                <p className='text-center px-10 mt-5'>Explore In-Depth Information About the Doctor's Educational Background, Specializations, Years of Experience, Patient Reviews, Consultation Hours, and Contact Information to Help You Make an Informed Choice</p>
+                <h2 className='text-2xl font-bold text-center'>Doctor’s Profile Details</h2>
+                <p className='text-center text-gray-600 px-10 mt-5'>Explore In-Depth Information About the Doctor's Educational Background, Specializations, Years of Experience, Patient Reviews, Consultation Hours, and Contact Information to Help You Make an Informed Choice</p>
 
             </div>
 
@@ -64,6 +72,7 @@ const Doctor = () => {
                 <hr className=' border-gray-400' />
                 <div className="badge badge-soft badge-warning ">Due to high patient volume, we are currently accepting appointments for today only. We appreciate your understanding and cooperation.</div>
                 <button onClick={handleAppointment} className='btn w-full rounded-full bg-blue-700 text-white mt-5'>Book Appointment Now</button>
+                
                 <ToastContainer></ToastContainer>
             </div>
 

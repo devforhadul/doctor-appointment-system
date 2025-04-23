@@ -2,6 +2,12 @@ import React from 'react';
 import { NavLink } from 'react-router';
 
 const Navbar = () => {
+
+  const handleMenuToggle = () => {
+    const menu = document.getElementById('navbar-cta');
+    menu.classList.toggle('hidden');
+  };
+
   return (
 
     <nav className="bg-[#efefef] border-gray-200 dark:bg-gray-900">
@@ -13,13 +19,14 @@ const Navbar = () => {
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             type="button"
-            className="font-jakarta text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="font-jakarta text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Emergency
           </button>
           <button
             data-collapse-toggle="navbar-cta"
             type="button"
+            onAbort={handleMenuToggle}
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="navbar-cta"
             aria-expanded="false"
@@ -48,18 +55,18 @@ const Navbar = () => {
         >
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
-              <NavLink to="/" className={({ isActive }) => `${isActive ? 'text-indigo-600' : ''}`}>Home</NavLink>
+              <NavLink to="/" className={({ isActive }) => `${isActive ? 'text-indigo-600 border-b-2' : ''}`}>Home</NavLink>
 
             </li>
             <li>
-              <NavLink to="/my-books" className={({ isActive }) => `${isActive ? 'text-indigo-600' : ''} `}>My Bookings</NavLink>
+              <NavLink to="/my-books" className={({ isActive }) => `${isActive ? 'text-indigo-600 border-b-2' : ''} `}>My Bookings</NavLink>
               
             </li>
             <li>
-              <NavLink to="/blogs" className={({ isActive }) => `${isActive ? 'text-indigo-600' : ''} `}>Blogs</NavLink>
+              <NavLink to="/blogs" className={({ isActive }) => `${isActive ? 'text-indigo-600 border-b-2' : ''} `}>Blogs</NavLink>
             </li>
             <li>
-              <NavLink to="/contactus" className={({ isActive }) => `${isActive ? 'text-indigo-600' : ''} `}>Contact us</NavLink>
+              <NavLink to="/contactus" className={({ isActive }) => `${isActive ? 'text-indigo-600 border-b-2' : ''} `}>Contact us</NavLink>
             </li>
           </ul>
         </div>

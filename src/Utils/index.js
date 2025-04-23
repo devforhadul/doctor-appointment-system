@@ -29,5 +29,5 @@ export const removeBookings = (id) => {
     localStorage.setItem('bookings',JSON.stringify(remainingBookings))
     
 
-    toast.success('Your appointment has been cancelled successfully.');
+    
 }

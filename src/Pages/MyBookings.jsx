@@ -5,6 +5,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import { Bar, BarChart, XAxis, YAxis } from 'recharts';
 import { useNavigate } from 'react-router';
 
+
 const MyBookings = () => {
     const [displayBooked, setDisplayBooked] = useState([]);
     const navigate = useNavigate();
@@ -18,6 +19,7 @@ const MyBookings = () => {
         removeBookings(id);
         setDisplayBooked(getBookings());
         toast.warn('Your appointment has been cancelled successfully.');
+        
     };
 
     const TriangleBar = ({ fill, x, y, width, height }) => {
