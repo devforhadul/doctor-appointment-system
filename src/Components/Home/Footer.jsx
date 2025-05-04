@@ -8,7 +8,7 @@ const Footer = () => {
 
       <div className='w-11/12 mx-auto py-14 space-y-4'>
         <div className='flex gap-1 justify-center items-center'>
-          <img src="/logo.png" className="h-8" alt="Flowbite Logo" />
+          <img src="/logo_love.jpeg" className="h-8" alt="Flowbite Logo" />
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Feni Medical Center</span>
         </div>
         <div className=''>

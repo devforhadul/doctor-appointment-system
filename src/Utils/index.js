@@ -1,4 +1,7 @@
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
+
+
+
 
 export const getBookings = () => {
     const bookings = localStorage.getItem('bookings');
@@ -11,7 +14,15 @@ export const getBookings = () => {
 }
 
 
-export const addBookings = (bookings) => {
+export const addBookings = (bookings, user) => {
+
+    if(!user) {
+        toast.error("Please login first!!");
+        return;
+    }
+    
+
+
     const booked = getBookings();
     const existingBooking = booked.find(booking => booking.id === bookings.id);
     if (existingBooking) {
@@ -22,6 +33,8 @@ export const addBookings = (bookings) => {
     localStorage.setItem('bookings',JSON.stringify(booked))
     
 }
+
+
 
 export const removeBookings = (id) => {
     const booked = getBookings();

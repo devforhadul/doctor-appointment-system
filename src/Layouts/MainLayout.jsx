@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
+import Footer from '../Components/Home/Footer';
 import { Outlet, useLocation } from 'react-router';
 import Spinner from '../Components/ui/Spinner';
+import ScrollToTop from '../Components/ui/ScrollToTop';
+import Navbar from '../Components/Home/Navbar';
 
 const MainLayout = () => {
 
     const [loading, setLoading] = useState(false);
     const location = useLocation();
 
-    useEffect(() => {   
+ 
+
+    useEffect(() => {
         setLoading(true);
         const timeout = setTimeout(() => {
             setLoading(false);
@@ -20,12 +23,13 @@ const MainLayout = () => {
 
     return (
         <>
-
-            <Navbar />
-            <div>
+            <ScrollToTop></ScrollToTop>
+            <Navbar></Navbar>
+            {/* <div className='w-11/12 mx-auto'>
                 {loading && <Spinner />}
                 {!loading && <Outlet />}
-            </div>
+            </div> */}
+            <Outlet />
             <Footer />
 
         </>

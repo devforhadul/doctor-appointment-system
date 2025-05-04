@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
     return (
-        <div className='w-11/12 mx-auto'>
+        <div className='w-11/12 mx-auto mt-4'>
             <div className="w-full p-4 text-center border-2 bg-gradient-to-t from-[#fff] to-[#efefef] border-white rounded-lg  sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                 <h5 className="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
                     Dependable Care, Backed by Trusted Professionals.

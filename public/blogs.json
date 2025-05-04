@@ -1,32 +1,66 @@
 [
   {
-    "id": 1,
-    "question": "What is useState and how does it work in React?",
-    "answer": "useState is a React hook that allows you to add state to functional components. It returns an array with two elements: the current state value and a function to update that value. When the state is updated, React re-renders the component.",
-    "date": "2025-04-15"
+    "id": "1",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeAE_texlSbRQ_aU32awIlZLcP0KwOcY-Uww&s",
+    "blogTitle": "Mindful Eating: ছোট ছোট কামড়ে লুকিয়ে সুস্বাস্থ্য!",
+    "blogDescription": "আজকের দ্রুতগতির জীবনে, আমরা প্রায়শই না চিবিয়ে খাবার গিলে ফেলি। মাইন্ডফুল ইটিং বা সচেতন ভোজন হলো একটি অভ্যাস যেখানে খাবারের স্বাদ, গন্ধ এবং প্রতিটি কামড়ের অনুভূতির দিকে মনোযোগ দেওয়া হয়। এটি হজমক্ষমতা বাড়াতে, ওজন নিয়ন্ত্রণে সাহায্য করতে এবং খাবারের পূর্ণ স্বাদ উপভোগ করতে সহায়তা করে। কীভাবে প্রতিটি গ্রাস ধীরে ধীরে উপভোগ করবেন এবং আপনার শরীরের ক্ষুধা ও তৃপ্তির সংকেত বুঝবেন, সেই বিষয়ে বিস্তারিত জানুন...",
+    "category": "পুষ্টি ও স্বাস্থ্য",
+    "date": "2025-04-25"
   },
   {
-    "id": 2,
-    "question": "What is the purpose of useEffect in React?",
-    "answer": "useEffect is a React hook that allows you to perform side effects in functional components. It can be used for tasks like fetching data, updating the DOM, or setting up subscriptions. It runs after the render and can be controlled to run only when certain dependencies change.",
-    "date": "2025-04-16"
+    "id": "2",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeAE_texlSbRQ_aU32awIlZLcP0KwOcY-Uww&s",
+    "blogTitle": "শারীরিক ব্যায়াম শুধু শরীর নয়, মনকেও রাখে চাঙ্গা!",
+    "blogDescription": "নিয়মিত ব্যায়াম আমাদের শারীরিক স্বাস্থ্যের জন্য অপরিহার্য, তবে এর মানসিক স্বাস্থ্য উপকারিতাও অনেক। ব্যায়ামের সময় এন্ডোরফিন নামক হরমোন নিঃসৃত হয়, যা আমাদের মন ভালো রাখে এবং স্ট্রেস, উদ্বেগ ও বিষণ্নতার লক্ষণ কমাতে সাহায্য করে। কোন ধরনের ব্যায়াম আপনার মানসিক শান্তির জন্য উপযোগী এবং কীভাবে এটিকে আপনার দৈনন্দিন রুটিনে যোগ করবেন, তা জানতে এই ব্লগটি পড়ুন...",
+    "category": "ফিটনেস",
+    "date": "2025-04-24"
   },
   {
-    "id": 3,
-    "question": "What is a custom hook in React and when should you use one?",
-    "answer": "A custom hook in React is a JavaScript function that allows you to reuse logic across multiple components. Custom hooks are typically used when you need to extract complex state logic or side effects from a component and make them reusable.",
-    "date": "2025-04-17"
+    "id": "3",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeAE_texlSbRQ_aU32awIlZLcP0KwOcY-Uww&s",
+    "blogTitle": "গভীর ঘুমের রহস্য উন্মোচন: ভালো ঘুমের জন্য কিছু টিপস!",
+    "blogDescription": "পর্যাপ্ত ঘুম আমাদের শারীরিক ও মানসিক স্বাস্থ্যের জন্য অত্যন্ত গুরুত্বপূর্ণ। অথচ অনেকেই রাতে ভালো ঘুমাতে পারেন না। এই ব্লগ পোস্টে ভালো ঘুমের অভ্যাস বা স্লিপ হাইজিন তৈরির কিছু গুরুত্বপূর্ণ নিয়ম আলোচনা করা হয়েছে। কীভাবে একটি আরামদায়ক ঘুমের পরিবেশ তৈরি করবেন, ঘুমের আগে প্রযুক্তির ব্যবহার এড়িয়ে চলবেন এবং সাধারণ ঘুমের ব্যাঘাতগুলো চিহ্নিত করে তা দূর করবেন, সেই বিষয়ে বিস্তারিত জানুন...",
+    "category": "ঘুম ও বিশ্রাম",
+    "date": "2025-04-23"
   },
   {
-    "id": 4,
-    "question": "Difference between controlled and uncontrolled components? Which one is better?",
-    "answer": "In a controlled component, the component’s state is managed by React (using state hooks or props). In an uncontrolled component, the state is handled by the DOM itself, using references. Controlled components are preferred in React as they give you better control over the form data and UI, while uncontrolled components are easier to set up but less flexible.",
-    "date": "2025-04-18"
+    "id": "4",
+    "img": "https://via.placeholder.com/600/90EE90/000000?Text=Hydration",
+    "blogTitle": "শরীরের জন্য জলের গুরুত্ব: পর্যাপ্ত জল পান কেন জরুরি?",
+    "blogDescription": "জল আমাদের শরীরের প্রায় সকল কার্যকারিতার জন্য অপরিহার্য। এটি শরীরের তাপমাত্রা নিয়ন্ত্রণ করে, পুষ্টি উপাদান পরিবহন করে এবং বর্জ্য পদার্থ বের করে দিতে সাহায্য করে। অনেকেই দিনের বেলা পর্যাপ্ত জল পান করেন না। এই ব্লগ পোস্টে শরীরের জন্য জলের অপরিহার্য ভূমিকা এবং ডিহাইড্রেশনের লক্ষণগুলো নিয়ে আলোচনা করা হয়েছে। প্রতিদিন কতটা জল পান করা উচিত এবং কীভাবে পর্যাপ্ত জল পান নিশ্চিত করবেন, তা জানুন...",
+    "category": "সাধারণ স্বাস্থ্য",
+    "date": "2025-04-22"
   },
   {
-    "id": 5,
-    "question": "Tell us something about useFormStatus() (explore and explain)",
-    "answer": "useFormStatus() is a React hook introduced in React 18 for tracking the status of form submissions, specifically for managing the form's submission state, whether it’s submitting, completed, or failed. It is commonly used in forms with async validation or submission processes to enhance the UX by providing users with feedback during form submission.",
+    "id": "5",
+    "img": "https://via.placeholder.com/600/FFA07A/FFFFFF?Text=Stress+Management",
+    "blogTitle": "স্ট্রেসকে বলুন গুডবাই: মানসিক চাপ কমানোর কার্যকরী উপায়!",
+    "blogDescription": "আজকের প্রতিযোগিতামূলক বিশ্বে স্ট্রেস একটি সাধারণ সমস্যা। তবে দীর্ঘস্থায়ী স্ট্রেস আমাদের শারীরিক ও মানসিক স্বাস্থ্যের ওপর খারাপ প্রভাব ফেলতে পারে। এই ব্লগ পোস্টে মানসিক চাপ কমানোর কিছু কার্যকরী উপায় নিয়ে আলোচনা করা হয়েছে, যা আপনি আপনার দৈনন্দিন জীবনে প্রয়োগ করতে পারেন। মাইন্ডফুলনেস, মেডিটেশন, শ্বাস-প্রশ্বাসের ব্যায়াম এবং সময় ব্যবস্থাপনার মাধ্যমে কীভাবে মানসিক চাপ কমাবেন, তা জানুন...",
+    "category": "মানসিক স্বাস্থ্য",
+    "date": "2025-04-21"
+  },
+  {
+    "id": "6",
+    "img": "https://via.placeholder.com/600/DDA0DD/FFFFFF?Text=Nutrient-Rich+Foods",
+    "blogTitle": "স্বাস্থ্যকর খাবারের শক্তি: পুষ্টিগুণে ভরপুর খাবার কেন খাবেন?",
+    "blogDescription": "ভিটামিন, মিনারেল এবং অ্যান্টিঅক্সিডেন্টে ভরপুর খাবার আমাদের সুস্বাস্থ্যের ভিত্তি। এই ব্লগ পোস্টে ফল, সবজি, শস্য এবং প্রোটিনের মতো পুষ্টিকর খাবার গ্রহণের গুরুত্ব তুলে ধরা হয়েছে। আপনার শরীরের প্রয়োজনীয় পুষ্টি উপাদানগুলো কী, একটি সুষম খাদ্যের উপকারিতা এবং কীভাবে স্বাস্থ্যকর খাবার নির্বাচন করবেন, সেই বিষয়ে বিস্তারিত জানুন...",
+    "category": "খাদ্য ও পুষ্টি",
+    "date": "2025-04-20"
+  },
+  {
+    "id": "7",
+    "img": "https://via.placeholder.com/600/4682B4/FFFFFF?Text=Positive+Mindset",
+    "blogTitle": "ইতিবাচক চিন্তাভাবনার জাদু: আশাবাদী দৃষ্টিভঙ্গি কীভাবে জীবন বদলায়?",
+    "blogDescription": "আমাদের চিন্তাভাবনা আমাদের সামগ্রিক স্বাস্থ্য ও ভালো থাকার ওপর গভীর প্রভাব ফেলে। ইতিবাচক মানসিকতা স্ট্রেস কমাতে, প্রতিকূলতা মোকাবিলা করতে এবং এমনকি আমাদের শারীরিক স্বাস্থ্যের উন্নতি ঘটাতে পারে। এই ব্লগ পোস্টে ইতিবাচক চিন্তাভাবনার উপকারিতা এবং কীভাবে নেতিবাচক চিন্তাগুলো পরিবর্তন করে একটি আশাবাদী দৃষ্টিভঙ্গি তৈরি করবেন, সেই বিষয়ে জানুন...",
+    "category": "জীবনধারা",
     "date": "2025-04-19"
+  },
+  {
+    "id": "8",
+    "img": "https://via.placeholder.com/600/F08080/FFFFFF?Text=Regular+Check-ups",
+    "blogTitle": "রোগ প্রতিরোধের চাবিকাঠি: নিয়মিত স্বাস্থ্য পরীক্ষা কেন জরুরি?",
+    "blogDescription": "নিয়মিত স্বাস্থ্য পরীক্ষা সুস্বাস্থ্য বজায় রাখার এবং রোগের প্রাথমিক পর্যায়ে সনাক্ত করার একটি গুরুত্বপূর্ণ পদক্ষেপ। এই ব্লগ পোস্টে রুটিন মেডিকেল পরীক্ষা, স্ক্রিনিং এবং টিকাদানের গুরুত্ব তুলে ধরা হয়েছে। প্রতিরোধমূলক স্বাস্থ্যসেবার উপকারিতা, স্বাস্থ্য পরীক্ষার সময় কী করা হয় এবং কীভাবে নিয়মিত স্বাস্থ্য পরীক্ষা একটি দীর্ঘ ও সুস্থ জীবন নিশ্চিত করতে পারে, তা জানুন...",
+    "category": "স্বাস্থ্য পরামর্শ",
+    "date": "2025-04-18"
   }
 ]

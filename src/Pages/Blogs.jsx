@@ -1,23 +1,25 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { useLoaderData} from 'react-router';
 import BlogsCard from '../Components/BlogsCard';
 
 const Blogs = () => {
 
     const blogs = useLoaderData();
+    
+
+
 
 
     return (
-        <div className='w-11/12 mx-auto'>
-            
-            <h2 className='text-2xl font-semibold text-center'>Blogs</h2>
-            <p className='text-gray-600 text-center px-10 mt-5'>Let's explore some basics concepts that will make you a good developer.</p>
 
+        <div className='w-11/12 mx-auto'>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
             {
                 blogs.map(blog => <BlogsCard blog={blog} key={blog.id} ></BlogsCard>)
             }
-
         </div>
+        </div>
+
     );
 };
 

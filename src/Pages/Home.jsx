@@ -1,21 +1,25 @@
 import React from 'react';
-import Hero from '../Components/Hero';
-import Doctors from '../Components/Doctors';
 import { useLoaderData } from 'react-router';
-import Success from '../Components/Success';
+import DoctorsComponenets from '../Components/DoctorComponent/DoctorsComponenets';
+import Hero from '../Components/Home/Hero';
+import Success from '../Components/Home/Success';
+import Departments from '../Components/Home/Departments';
+
 
 const Home = () => {
 
     const doctorData = useLoaderData();
-    
+
 
     return (
         <div className=''>
-            <Hero />
+            <Hero></Hero>
             <div className='w-11/12 mx-auto'>
-            <Doctors doctorData={doctorData} />
+                <DoctorsComponenets doctorData={doctorData} />
+
             </div>
-            <Success />
+            <Departments></Departments>
+            <Success></Success>
         </div>
     );
 };
