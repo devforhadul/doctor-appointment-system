@@ -60,8 +60,8 @@ const Doctors = () => {
 
     return (
         <div className='w-11/12 mx-auto'>
-            <div className='my-10'>
-                <h2 className='text-3xl font-bold mb-5'>Doctors</h2>
+            <div className=''>
+                {/* <h2 className='text-3xl font-bold mb-5'>Doctors</h2> */}
                 <div className="breadcrumbs text-sm">
                     <ul>
                         <li><Link to={'/'}>Home</Link></li>
@@ -70,13 +70,13 @@ const Doctors = () => {
                 </div>
                 <div className="flex flex-col items-center justify-center py-5 bg-[#F9F9F9]">
                     {/* Title */}
-                    <h1 className="text-3xl font-bold text-blue-900 mb-2">
+                    <h1 className="text-xl font-semibold text-blue-900 mb-2">
                         Search doctor, Make an appointment
                     </h1>
 
                     {/* Subtitle */}
                     <p className="text-gray-600 mb-8 text-center">
-                        Discover the best doctors, clinics, and hospitals in the city nearest to you.
+                       Browse through the doctors specialist.
                     </p>
 
                     {/* Search Bar */}
@@ -118,7 +118,7 @@ const Doctors = () => {
                     </div>
                 </div>
                 {/* doctor card */}
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4'>
+                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 items-center justify-center'>
 
                     {
                         Array.isArray(displayDoctors) && displayDoctors.map((doctor, idx) =>

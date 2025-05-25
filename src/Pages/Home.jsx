@@ -4,6 +4,8 @@ import DoctorsComponenets from '../Components/DoctorComponent/DoctorsComponenets
 import Hero from '../Components/Home/Hero';
 import Success from '../Components/Home/Success';
 import Departments from '../Components/Home/Departments';
+import SpecialitySection from '../Components/SpecialitySection';
+import CreateSection from '../Components/CreateSection';
 
 
 const Home = () => {
@@ -14,11 +16,15 @@ const Home = () => {
     return (
         <div className=''>
             <Hero></Hero>
+            <section>
+                <SpecialitySection></SpecialitySection>
+            </section>
             <div className='w-11/12 mx-auto'>
                 <DoctorsComponenets doctorData={doctorData} />
 
             </div>
-            <Departments></Departments>
+            {/* <Departments></Departments> */}
+            <CreateSection></CreateSection>
             <Success></Success>
         </div>
     );

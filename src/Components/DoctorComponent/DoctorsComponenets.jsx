@@ -11,7 +11,7 @@ const DoctorsComponenets = ({ doctorData = []}) => {
     const [displayDoctors, setDisplayDoctors] = useState([]);
     const [viewAllDoctor, setViewAllDoctor] = useState(false);
     const navigate = useNavigate();
-    ;
+    
 
 
    
@@ -23,7 +23,7 @@ const DoctorsComponenets = ({ doctorData = []}) => {
             setDisplayDoctors(doctorData);
         }
         else {
-            setDisplayDoctors(doctorData.slice(0, 4));
+            setDisplayDoctors(doctorData.slice(0, 8));
         }
     }, [doctorData, viewAllDoctor])
 
@@ -35,11 +35,11 @@ const DoctorsComponenets = ({ doctorData = []}) => {
 
     return (
         <div className='my-10'>
-            <h2 className='text-3xl text-center font-bold mb-5'>Our Doctors</h2>
-            <p className='text-center mb-5'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. Whether it's a routine checkup or urgent consultation, book appointments in minutes and receive quality care you can trust.</p>
+            <h2 className='text-3xl text-center font-semibold mb-5'>Our Doctors</h2>
+            <p className='text-center mb-5'>Simply browse through our extensive list of trusted doctors.</p>
 
             {/* doctor card */}
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4'>
+            <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4'>
 
                 {
                     Array.isArray(displayDoctors) && displayDoctors.map(doctor => <DoctorCard key={doctor.id} doctor={doctor} />)
