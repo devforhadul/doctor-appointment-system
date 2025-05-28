@@ -8,14 +8,13 @@ import { getDatabase } from "firebase/database";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCGOU8Mo5K_lXy7JOTT8jxCgShwbnCCwgM",
-    authDomain: "doctor-appointment-syste-20e97.firebaseapp.com",
-    projectId: "doctor-appointment-syste-20e97",
-    storageBucket: "doctor-appointment-syste-20e97.firebasestorage.app",
-    messagingSenderId: "975319566023",
-    appId: "1:975319566023:web:db5f73580504cd392260e2",
-    databaseURL: "https://doctor-appointment-syste-20e97-default-rtdb.asia-southeast1.firebasedatabase.app"
-
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
 };
 
 // Initialize Firebase

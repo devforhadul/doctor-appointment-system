@@ -21,6 +21,8 @@ const DoctorDetails = () => {
   const { user } = use(AuthContext);
   const [selectedDate, setSelectedDate] = useState(new Date());
 
+  console.log(selectedDate)
+
   useEffect(() => {
     const singleDoctor = DoctorsData.find(
       (doctor) => doctor.id === parseInt(id)
@@ -69,12 +71,12 @@ const DoctorDetails = () => {
             <h2 className="text-3xl font-semibold">{singleDoctor?.name}</h2>
 
             <div className="space-y-2">
-              <p className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center">
                 <span className=" font-medium">{singleDoctor?.education}</span>
                 <p className="px-3 border border-gray-400 rounded-3xl">
                   {singleDoctor?.experience}
                 </p>
-              </p>
+              </div>
               <p>
                 {/* <span className="text-gray-600 font-semibold">Speciality: </span> */}
                 <span className="font-medium">{singleDoctor?.speciality}</span>
@@ -113,11 +115,23 @@ const DoctorDetails = () => {
           </div>
         </div>
       </div>
-
+        {/* Book appointment */}
       <div className="bg-[#eee] rounded-2xl space-y-3 p-8 my-6">
-        <h2 className="text-2xl font-semibold text-center">
+        <h2 className="text-2xl font-semibold text-center mb-2">
           Book an Appointment
         </h2>
+
+        {/* Doctor Chamber */}
+        <div className="mb-5">
+          <h3 className="text-lg font-semibold mb-2">Chamber 01 & Appointment</h3>
+          <div className="space-y-1">
+            <h5 className="text-lg font-medium">Islami Bank Central Hospital, Kakrail</h5>
+            <p>Address:  30, Anjuman Mofidul Islam Road, Kakrail, Dhaka</p>
+            <p className="text-lg font-medium">Visiting Hour: 7.30pm to 10pm (Saturday to Wednesday)</p>
+            <h4>Appointment: +8801810000116, +8801915728266</h4>
+            <button className="btn">Call Now</button>
+          </div>
+        </div>
 
         {/* ✅ Date Picker */}
         <div className="flex flex-col">

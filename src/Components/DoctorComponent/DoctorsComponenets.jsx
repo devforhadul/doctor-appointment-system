@@ -39,7 +39,7 @@ const DoctorsComponenets = ({ doctorData = []}) => {
             <p className='text-center mb-5'>Simply browse through our extensive list of trusted doctors.</p>
 
             {/* doctor card */}
-            <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4'>
+            <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 p-4'>
 
                 {
                     Array.isArray(displayDoctors) && displayDoctors.map(doctor => <DoctorCard key={doctor.id} doctor={doctor} />)

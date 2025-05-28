@@ -8,6 +8,8 @@ const Doctors = () => {
 
     const doctorData = useLoaderData();
 
+    
+
 
 
     const [displayDoctors, setDisplayDoctors] = useState([]);

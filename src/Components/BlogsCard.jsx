@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 
 const BlogsCard = ({ blog }) => {
 
+    console.log(blog.id)
 
     const handleReadBtn = () => {
         // Handle the read button click event here

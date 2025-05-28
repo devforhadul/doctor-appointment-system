@@ -8,7 +8,7 @@ import toast, { Toaster } from "react-hot-toast";
 const Navbar = () => {
   const { user, signOutuser } = use(AuthContext);
 
-
+  console.log(user?.photoURL)
 
   const handleSignOut = () => {
     signOutuser()
@@ -139,7 +139,11 @@ const Navbar = () => {
                 className="btn btn-ghost btn-circle avatar"
               >
                 <div className="w-10 rounded-full">
-                  <img alt="profile_img" src={user?.photoURL} />
+                  {
+                    user?.photoURL &&(
+                      <img alt="profile_img" src={user?.photoURL} />
+                    )
+                  }
                 </div>
               </div>
               <ul
