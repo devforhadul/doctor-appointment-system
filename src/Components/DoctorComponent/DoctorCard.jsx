@@ -2,21 +2,12 @@ import React from "react";
 import { Link } from "react-router";
 import { FaMapMarkerAlt, FaGraduationCap } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
-import { motion } from "motion/react"
 
 const DoctorCard = ({ doctor }) => {
-  const { id, name, image, education, speciality, location } = doctor;
+  const { _id, name, image, education, speciality, location } = doctor;
 
   return (
-    <motion.div 
-    whileHover={{
-      scale: 1.1,
-      transition: {duration: 0.1}
-    }}
-    
-    // whileTap={{scale: 0.95}}
-    onHoverStart={() => console.log('hover started!')}
-    className=" bg-white rounded-lg overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition duration-300">
+    <div className=" bg-white rounded-lg overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition duration-300">
       <img
         className="w-full h-75 object-cover"
         src={image}
@@ -40,7 +31,7 @@ const DoctorCard = ({ doctor }) => {
 
         {/* View Details Button */}
         <div className="mt-4">
-          <Link to={`/doctor-details/${id}`}>
+          <Link to={`/doctor/${_id}`}>
             <button className="bg-red-600 text-white px-4 py-2 rounded-md text-sm hover:bg-red-700 transition cursor-pointer">
               View Details
             </button>
@@ -48,7 +39,7 @@ const DoctorCard = ({ doctor }) => {
           </Link>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

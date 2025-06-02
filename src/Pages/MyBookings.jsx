@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { getBookings, removeBookings } from "../Utils";
+import React, {  useState } from "react";
 import BookedCard from "../Components/BookedCard";
-import { Bar, BarChart, XAxis, YAxis } from "recharts";
 import { Link, useLocation, useNavigate } from "react-router";
-import { AuthContext } from "../Contexts/AuthContext";
 import toast, { Toaster } from "react-hot-toast";
 
 const MyBookings = () => {
@@ -11,27 +8,17 @@ const MyBookings = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    const savedBookings = getBookings();
-    setDisplayBooked(savedBookings);
-  }, []);
+
 
   const handleDelete = (id) => {
-    removeBookings(id);
-    setDisplayBooked(getBookings());
+    
     alert("Are you sure?");
     toast.success("Your appointment has been cancelled successfully.");
   };
 
-  // const TriangleBar = ({ fill, x, y, width, height }) => {
-  //     return (
-  //         <path
-  //             d={`M${x},${y + height} L${x + width / 2},${y} L${x + width},${y + height} Z`}
-  //             stroke="none"
-  //             fill={fill}
-  //         />
-  //     );
-  // };
+
+  
+  
 
   return (
     <div className="w-11/12 mx-auto">

@@ -46,6 +46,16 @@ const AddDoctor = () => {
 
   // Function to convert 0 → A, 1 → B, etc.
 const getAlphabet = (index) => String.fromCharCode(65 + index);
+
+// const appointmentData = {
+//     chamber: {
+//       name: "",
+//       address: "",
+//       visitDay: "",
+//       visitHour: "",
+//       contact: ["", ""],
+//     },
+//   };
   
 
   return (

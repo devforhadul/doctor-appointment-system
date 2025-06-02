@@ -7,9 +7,11 @@ import { Link, useLoaderData } from 'react-router';
 const Doctors = () => {
 
     const doctorData = useLoaderData();
+    
+    console.log(doctorData)
 
     
-
+    //console.log(import.meta.env.VITE_S_URL);
 
 
     const [displayDoctors, setDisplayDoctors] = useState([]);

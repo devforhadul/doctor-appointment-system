@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 const BlogsCard = ({ blog }) => {
 
-    console.log(blog.id)
+    
 
     const handleReadBtn = () => {
         // Handle the read button click event here
@@ -30,7 +30,7 @@ const BlogsCard = ({ blog }) => {
                 <p className="text-gray-600 text-sm mb-3">
                     {blog.blogDescription}
                 </p>
-                <Link to={`/blog/${blog.id}`} className="flex items-center text-blue-500 hover:text-blue-700">
+                <Link to={`/blog/${blog?._id}`} className="flex items-center text-blue-500 hover:text-blue-700">
                     <button onClick={handleReadBtn} className="text-red-500 font-semibold text-sm hover:text-red-700 cursor-pointer">
                         Continue Reading &raquo;
                     </button>

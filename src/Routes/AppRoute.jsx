@@ -26,17 +26,17 @@ const routers = createBrowserRouter([
       {
         index: true,
         path: '/',
-        loader: () => fetch('../doctor.json'),
+        loader: () => fetch(`${import.meta.env.VITE_S_URL}/doctors`),
         element: <Home />,
       },
       {
         path: '/doctors',
-        loader: () => fetch('../doctor.json'),
+        loader: () => fetch(`${import.meta.env.VITE_S_URL}/doctors`),
         element: <Doctors></Doctors>
       },
       {
-        path: '/doctor-details/:id',
-        loader: () => fetch('../doctor.json'),
+        path: '/doctor/:id',
+        loader: ({params}) => fetch(`${import.meta.env.VITE_S_URL}/doctor/${params.id}`),
         element: <DoctorDetails></DoctorDetails>,
         errorElement: <p>Doctor not found</p>
 
@@ -46,13 +46,13 @@ const routers = createBrowserRouter([
         element: <PrivateRoute><MyBookings /></PrivateRoute>,
       },
       {
-        path: '/blogs',
-        loader: () => fetch('../blogs.json'),
-        element: <Blogs />,
+        path: '/blog',
+        loader: () => fetch(`${import.meta.env.VITE_S_URL}/blog`),
+        element: <Blogs></Blogs>,
       },
       {
         path: '/blog/:id',
-        loader: () => fetch('../blogs.json'),
+        loader: ({params}) => fetch(`${import.meta.env.VITE_S_URL}/blog/${params.id}`),
         element: <BlogDetails></BlogDetails>
       },
       {

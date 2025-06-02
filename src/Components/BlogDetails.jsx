@@ -1,15 +1,12 @@
 import React from "react";
-import { useLoaderData, useParams } from "react-router";
+import { useLoaderData } from "react-router";
 
 const BlogDetails = () => {
-  const blogsData = useLoaderData();
-  const { id } = useParams();
+  const singleBlog = useLoaderData();
+  
 
-  const singleBlog = blogsData?.find((blog) => blog.id == id);
-  console.log(singleBlog);
-  if (!singleBlog) {
-    return <div>Blog not found</div>;
-  }
+
+ 
 
   return (
     <div className="bg-white rounded-lg shadow-md p-6">

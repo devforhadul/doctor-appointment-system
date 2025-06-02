@@ -8,7 +8,7 @@ import toast, { Toaster } from "react-hot-toast";
 const Navbar = () => {
   const { user, signOutuser } = use(AuthContext);
 
-  console.log(user?.photoURL)
+ // console.log(user?.photoURL)
 
   const handleSignOut = () => {
     signOutuser()
@@ -86,12 +86,12 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to="/blogs"
+                  to="/blog"
                   className={({ isActive }) =>
                     `${isActive ? "text-indigo-600 border-b-2" : ""} `
                   }
                 >
-                  Blogs
+                  Blog
                 </NavLink>
               </li>
               <li>

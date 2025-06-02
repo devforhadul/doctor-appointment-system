@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { use, useState } from "react";
 import {
   FaFacebookF,
   FaTwitter,
@@ -6,46 +6,53 @@ import {
   FaInstagram,
   FaGlobe,
 } from "react-icons/fa";
-import { useLoaderData, useNavigate, useParams } from "react-router";
+import { useLoaderData } from "react-router";
 import { AuthContext } from "../../Contexts/AuthContext";
-import { addBookings } from "../../Utils";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
 
 const DoctorDetails = () => {
-  const DoctorsData = useLoaderData();
-  const [singleDoctor, setSingleDoctor] = useState(null);
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const singleDoctor = useLoaderData();
+  //const [singleDoctor, setSingleDoctor] = useState(doctorsData || {});
   const { user } = use(AuthContext);
   const [selectedDate, setSelectedDate] = useState(new Date());
 
-  console.log(selectedDate)
+  // const appointmentData = {
+  //   chamber: {
+  //     name: "",
+  //     address: "",
+  //     visitDay: "",
+  //     visitHour: "",
+  //     contact: ["", ""],
+  //   },
+  // };
+  // console.log(appointmentData)
 
-  useEffect(() => {
-    const singleDoctor = DoctorsData.find(
-      (doctor) => doctor.id === parseInt(id)
-    );
-    setSingleDoctor(singleDoctor);
-  }, [DoctorsData, id]);
+  console.log();
 
   const handleAppointment = () => {
-    const booked = JSON.parse(localStorage.getItem("bookings")) || [];
+    const appointmentData = {
+      doctorId: singleDoctor?._id,
+      user: {
+        name: user?.displayName,
+        email: user?.email,
+        phone: user?.phoneNumber,
+      },
+      appointmentDate: selectedDate,
+    };
 
-    const alreadyBooked = booked.some((doc) => doc.id === singleDoctor.id);
-    // check already booked doctor
-    if (alreadyBooked) {
-      toast("You have already booked this doctor.", { icon: "⚠️" });
-      return;
-    }
-
-    addBookings(singleDoctor, user);
-
-    setTimeout(() => {
-      user ? navigate("/my-bookings") : navigate("/log-in");
-      toast("Please login first!!", { icon: "⚠️" });
-    }, 500);
+    axios
+      .post(`${import.meta.env.VITE_S_URL}/appointment`, appointmentData)
+      .then((res) => {
+        console.log("Appointment successful:", res.data);
+        toast.success("Appointment successful")
+      })
+      .catch(error=>{
+         console.log("Appointment Failed:", error);
+        toast.success("Appointment Filded")
+      })
   };
 
   return (
@@ -115,7 +122,7 @@ const DoctorDetails = () => {
           </div>
         </div>
       </div>
-        {/* Book appointment */}
+      {/* Book appointment */}
       <div className="bg-[#eee] rounded-2xl space-y-3 p-8 my-6">
         <h2 className="text-2xl font-semibold text-center mb-2">
           Book an Appointment
@@ -123,12 +130,22 @@ const DoctorDetails = () => {
 
         {/* Doctor Chamber */}
         <div className="mb-5">
-          <h3 className="text-lg font-semibold mb-2">Chamber 01 & Appointment</h3>
+          <h3 className="text-lg font-semibold mb-2">
+            Chamber 01 & Appointment
+          </h3>
           <div className="space-y-1">
-            <h5 className="text-lg font-medium">Islami Bank Central Hospital, Kakrail</h5>
-            <p>Address:  30, Anjuman Mofidul Islam Road, Kakrail, Dhaka</p>
-            <p className="text-lg font-medium">Visiting Hour: 7.30pm to 10pm (Saturday to Wednesday)</p>
-            <h4>Appointment: +8801810000116, +8801915728266</h4>
+            <h5 className="text-lg font-medium">
+              {singleDoctor.chamber?.name || "Not Found"}
+            </h5>
+            <p>Address: {singleDoctor.chamber?.address || "Not Found"}</p>
+            <p className="text-lg font-medium">
+              Visiting Hour: {singleDoctor.chamber?.visitHour || "Not Found"} (
+              {singleDoctor.chamber?.visitDay || "Not Found"})
+            </p>
+            <h4>
+              Appointment:{" "}
+              {singleDoctor.chamber?.contact.map((con) => con) || "Not Found"}
+            </h4>
             <button className="btn">Call Now</button>
           </div>
         </div>
@@ -168,9 +185,7 @@ const DoctorDetails = () => {
             Simply browse through our extensive list of trusted doctors.
           </p>
         </div>
-        <div>
-            related doctor card here...
-        </div>
+        <div>related doctor card here...</div>
       </div>
 
       <Toaster></Toaster>
