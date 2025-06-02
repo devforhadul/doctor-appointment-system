@@ -22,7 +22,7 @@ const DashBoard = () => {
                         <li><NavLink to={'/dash/doctor-list'} className="flex items-center gap-1"><CiBoxList /> Doctors List</NavLink></li>
                     </ul>
                 </div>
-                <div className="rightRoute col-span-10 bg-[#f8f9fd] p-5">
+                <div className="rightRoute col-span-10 bg-[#f8f9fd] p-5 h-screen">
                     <Outlet></Outlet>
                 </div>
             </div>

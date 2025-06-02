@@ -1,6 +1,9 @@
 import React from "react";
 
 const BookedCard = ({ booked, handleDelete }) => {
+
+  console.log(booked)
+
   return (
     <div>
       <div className="flex items-center justify-between p-4 rounded-md mb-2">

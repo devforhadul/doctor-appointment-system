@@ -16,6 +16,8 @@ import DashBoard from "../Dashboard/DashBoard";
 import Appointments from "../Dashboard/Appointments";
 import AddDoctor from "../Dashboard/AddDoctor";
 import DoctorList from "../Dashboard/DoctorList";
+import axios from "axios";
+import EnteryDash from "../Dashboard/EnteryDash";
 
 
 const routers = createBrowserRouter([
@@ -83,10 +85,12 @@ const routers = createBrowserRouter([
     children:[
       {
         index: true,
-        element: <p>Entry dashboard</p>
+        
+        element: <EnteryDash></EnteryDash>
       },
       {
         path: 'appoinments',
+        loader: ()=> axios.get(`${import.meta.env.VITE_S_URL}/appointment`),
         element: <PrivateRoute><Appointments></Appointments></PrivateRoute>
       },
       {
@@ -95,6 +99,7 @@ const routers = createBrowserRouter([
       },
       {
         path: 'doctor-list',
+        loader: ()=> axios.get(`${import.meta.env.VITE_S_URL}/doctors`),
         element: <PrivateRoute><DoctorList></DoctorList></PrivateRoute>
       }
       

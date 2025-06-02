@@ -1,24 +1,36 @@
-import React, {  useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import BookedCard from "../Components/BookedCard";
 import { Link, useLocation, useNavigate } from "react-router";
 import toast, { Toaster } from "react-hot-toast";
+import { AuthContext } from "../Contexts/AuthContext";
+import axios from "axios";
 
 const MyBookings = () => {
   const [displayBooked, setDisplayBooked] = useState([]);
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const { user } = use(AuthContext);
 
+  useEffect(() => {
+    if (user?.email) {
+      axios
+        .get(`${import.meta.env.VITE_S_URL}/appointment?email=${user?.email}`)
+        .then((res) => {
+          setDisplayBooked(res.data);
+          
+        })
+        .catch((err) => {
+          console.error("Error fetching applications:", err);
+        });
+    }
+  }, [user]);
 
+ 
 
   const handleDelete = (id) => {
-    
     alert("Are you sure?");
     toast.success("Your appointment has been cancelled successfully.");
   };
-
-
-  
-  
 
   return (
     <div className="w-11/12 mx-auto">
@@ -58,7 +70,7 @@ const MyBookings = () => {
               </ul>
             </div>
             <h2 className="text-xl font-medium">My Appointments</h2>
-            <hr className="text-gray-200  my-2  border-1"/>
+            <hr className="text-gray-200  my-2  border-1" />
           </div>
         </>
       )}
